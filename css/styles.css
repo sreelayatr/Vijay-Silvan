@@ -1316,13 +1316,15 @@ ul {
 
 .blog-card__media {
   margin: 0 0 1.15rem;
-  overflow: hidden;
+  overflow: visible;
+  background: var(--cream, #f6f4ef);
 }
 
 .blog-card__media img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
 }
 
