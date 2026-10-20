@@ -1647,6 +1647,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 65%;
   filter: blur(1.5px) brightness(0.72);
   transform: scale(1.04);
 }
@@ -1779,18 +1780,19 @@ ul {
 .about-philosophy__photo {
   border: 1px solid var(--ink);
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
   max-width: 340px;
   justify-self: end;
   width: 100%;
+  background: var(--cream, #f6f4ef);
 }
 
 .about-philosophy__photo img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
-  filter: grayscale(100%);
 }
 
 .about-connect {
@@ -1806,13 +1808,15 @@ ul {
 .about-connect__large {
   border: 1px solid var(--ink);
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
+  background: var(--cream, #f6f4ef);
 }
 
 .about-connect__large img {
   width: 100%;
-  aspect-ratio: 1 / 1.05;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -1846,14 +1850,16 @@ ul {
 .about-connect__small {
   border: 1px solid var(--ink);
   margin: 0 0 1.5rem;
-  overflow: hidden;
+  overflow: visible;
   width: min(100%, 320px);
+  background: var(--cream, #f6f4ef);
 }
 
 .about-connect__small img {
   width: 100%;
-  aspect-ratio: 16 / 11;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
 }
 
