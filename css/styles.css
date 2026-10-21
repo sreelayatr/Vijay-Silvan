@@ -2187,6 +2187,10 @@ ul {
   object-position: center 46%;
 }
 
+.tst-slide__bg--celebration {
+  object-position: center 38%;
+}
+
 .tst-slide::after {
   content: "";
   position: absolute;
@@ -2328,6 +2332,10 @@ ul {
 
   .tst-slide__bg--ring {
     object-position: 70% 46%;
+  }
+
+  .tst-slide__bg--celebration {
+    object-position: 65% 38%;
   }
 
   .tst-slider__nav {
