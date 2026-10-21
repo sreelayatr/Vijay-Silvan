@@ -875,6 +875,10 @@ ul {
   object-position: center 64%;
 }
 
+.connect--shoreline .connect__bg img {
+  object-position: center 76%;
+}
+
 .connect__bg::after {
   content: "";
   position: absolute;
@@ -2051,7 +2055,22 @@ ul {
   height: 100%;
   max-width: none;
   object-fit: cover;
+  object-position: center 46%;
   z-index: 0;
+}
+
+/* Wide celebration photo: on narrow screens match the frame to the
+   picture so the seated couple, bowls, and raised hands stay in view. */
+@media (max-width: 899px) {
+  .tst-hero {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1024 / 692;
+  }
+
+  .tst-hero__bg {
+    object-position: center center;
+  }
 }
 
 .tst-hero::after {
@@ -2332,6 +2351,7 @@ ul {
   height: 100%;
   max-width: none;
   object-fit: cover;
+  object-position: center 30%;
   z-index: 0;
 }
 
@@ -2402,6 +2422,14 @@ ul {
   object-fit: cover;
 }
 
+.exp-step__media--natural img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .exp-step h3 {
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 3.5vw, 1.5rem);
@@ -2468,7 +2496,8 @@ ul {
 .exp-faq__collage {
   position: relative;
   height: 30rem;
-  margin: 0 0 3rem;
+  /* 3rem gap, or enough for the natural-ratio grass photo when it is taller than the collage */
+  margin: 0 0 max(3rem, calc(0.58 * 1024 / 682 * 100% - 30rem));
 }
 
 .exp-faq__photo {
@@ -2493,12 +2522,28 @@ ul {
   z-index: 1;
 }
 
+.exp-faq__photo--top.exp-faq__photo--natural {
+  height: auto;
+}
+
+.exp-faq__photo--top.exp-faq__photo--natural img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .exp-faq__photo--mid {
   top: 38%;
   right: 4%;
   width: 44%;
   height: 42%;
   z-index: 3;
+}
+
+.exp-faq__photo--mid img {
+  object-position: center 34%;
 }
 
 .exp-faq__photo--bottom {
@@ -2669,10 +2714,11 @@ ul {
 
 .svc-quote {
   position: relative;
-  min-height: min(72vh, 36rem);
+  aspect-ratio: 1024 / 653;
+  min-height: 0;
   display: grid;
   place-items: center;
-  padding: 4rem 1.5rem;
+  padding: 2.5rem 1.5rem;
   overflow: hidden;
   color: var(--white);
 }
@@ -2684,6 +2730,7 @@ ul {
   height: 100%;
   max-width: none;
   object-fit: cover;
+  object-position: center 56%;
   z-index: 0;
 }
 
@@ -2705,6 +2752,7 @@ ul {
   line-height: 1.65;
   text-align: center;
   color: var(--white);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
 }
 
 .svc-packages {
@@ -2904,9 +2952,9 @@ ul {
 }
 
 .svc-connect__photo img {
+  display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  height: auto;
 }
 
 .svc-connect__note {
@@ -2946,7 +2994,8 @@ ul {
   }
 
   .svc-quote {
-    min-height: 26rem;
+    min-height: 0;
+    aspect-ratio: 1024 / 653;
   }
 
   .svc-packages {
