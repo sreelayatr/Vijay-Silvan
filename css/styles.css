@@ -1719,33 +1719,39 @@ ul {
 
 .about-intro__copy {
   grid-area: copy;
-  max-width: 26rem;
-}
-
-.about-intro__copy h6 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 0.95rem;
-  margin-bottom: 0.65rem;
-  color: var(--ink);
+  max-width: 32rem;
 }
 
 .about-intro__copy h1 {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  font-size: clamp(1.65rem, 3.2vw, 2.25rem);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--ink);
-  margin-bottom: 1.15rem;
+  margin-bottom: 0.35rem;
   line-height: 1.2;
 }
 
+.about-intro__copy h6 {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.35rem;
+  color: var(--ink-muted);
+}
+
 .about-intro__copy p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.75;
   color: var(--ink-muted);
+}
+
+.about-intro__copy p + p {
+  margin-top: 1rem;
 }
 
 .about-quote {
