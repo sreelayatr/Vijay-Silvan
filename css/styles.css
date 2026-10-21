@@ -2183,11 +2183,15 @@ ul {
   z-index: 0;
 }
 
+.tst-slide__bg--ring {
+  object-position: center 48%;
+}
+
 .tst-slide::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.38);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -2195,6 +2199,7 @@ ul {
   position: relative;
   z-index: 2;
   max-width: 28rem;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 .tst-slide__content h3 {
