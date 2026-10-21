@@ -2278,9 +2278,11 @@ ul {
 }
 
 .tst-close__portrait img {
+  display: block;
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
+  object-position: center;
 }
 
 .tst-close__wide {
@@ -2288,6 +2290,7 @@ ul {
 }
 
 .tst-close__wide img {
+  display: block;
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
