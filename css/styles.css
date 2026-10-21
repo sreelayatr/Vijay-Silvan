@@ -2297,8 +2297,9 @@ ul {
 .tst-close__wide img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1024 / 683;
   object-fit: cover;
+  object-position: center;
 }
 
 @media (min-width: 900px) {
