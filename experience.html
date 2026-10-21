@@ -11,8 +11,32 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header site-header--split">
+      <nav class="header-nav header-nav--left" aria-label="Primary left">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-drop">
+          <a href="portfolio.html" class="nav-drop__trigger">Portfolio <span aria-hidden="true">+</span></a>
+          <ul class="nav-drop__menu">
+            <li><a href="weddings.html">Gallery 1</a></li>
+            <li><a href="elopements.html">Gallery 2</a></li>
+            <li><a href="portraits.html">Gallery 3</a></li>
+          </ul>
+        </div>
+      </nav>
       <a class="brand" href="index.html">Vijay Silvan</a>
+      <nav class="header-nav header-nav--right" aria-label="Primary right">
+        <a href="blog.html">Blog</a>
+        <div class="nav-drop">
+          <a href="services.html" class="nav-drop__trigger" aria-current="page">Info <span aria-hidden="true">+</span></a>
+          <ul class="nav-drop__menu">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="experience.html" aria-current="page">Experience</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
       <button
         class="menu-toggle"
         type="button"
