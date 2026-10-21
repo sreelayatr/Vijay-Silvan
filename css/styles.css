@@ -978,11 +978,21 @@ ul {
   width: 1.15rem;
   height: 1.15rem;
   color: #3a3a3a;
-  transition: opacity 0.25s;
+  transition: opacity 0.25s, color 0.25s;
 }
 
 .socials a:hover {
   opacity: 0.55;
+}
+
+.socials a[aria-label="YouTube"]:hover {
+  opacity: 1;
+  color: #ff0000;
+}
+
+.socials a[aria-label="Instagram"]:hover {
+  opacity: 1;
+  color: #833ab4;
 }
 
 .socials svg {
