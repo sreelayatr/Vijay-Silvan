@@ -123,8 +123,7 @@ ul {
 }
 
 .site-header--solid {
-  position: sticky;
-  top: 0;
+  position: relative;
   background: var(--cream);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
