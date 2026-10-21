@@ -813,9 +813,14 @@ ul {
   align-items: center;
 }
 
-.browse__cats a {
+.browse__cats a,
+.browse__cats span {
   font-family: var(--font-serif);
   color: var(--ink);
+  cursor: default;
+}
+
+.browse__cats a {
   transition: opacity 0.25s;
 }
 
