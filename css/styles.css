@@ -2119,9 +2119,11 @@ ul {
 }
 
 .tst-featured__photo img {
+  display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 682 / 1024;
   object-fit: cover;
+  object-position: center;
 }
 
 .tst-featured__name {
