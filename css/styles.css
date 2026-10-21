@@ -452,12 +452,13 @@ ul {
 }
 
 .hero__slide img:not(.hero__slide-fill) {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  height: min(100%, 1024px);
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero__content {
