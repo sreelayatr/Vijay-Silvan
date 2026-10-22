@@ -62,7 +62,7 @@
 
       item.classList.toggle("is-expanded", willOpen);
       const icon = item.querySelector(".nav-parent__icon");
-      if (icon) icon.textContent = willOpen ? "–" : "+";
+      if (icon) icon.textContent = willOpen ? "-" : "+";
       btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
     });
   });

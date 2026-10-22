@@ -56,10 +56,12 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="nav-item has-sub">
-          <button type="button" class="nav-parent" data-nav-accordion aria-expanded="false">
-            <span>Portfolio</span>
-            <span class="nav-parent__icon" aria-hidden="true">+</span>
-          </button>
+          <div class="nav-parent-wrap">
+            <a href="portfolio.html" class="nav-parent__link">Portfolio</a>
+            <button type="button" class="nav-parent__btn" data-nav-accordion aria-expanded="false" aria-label="Toggle Portfolio sub-menu">
+              <span class="nav-parent__icon" aria-hidden="true">+</span>
+            </button>
+          </div>
           <ul class="nav-sub">
             <li><a href="weddings.html">Gallery 1</a></li>
             <li><a href="elopements.html">Gallery 2</a></li>
