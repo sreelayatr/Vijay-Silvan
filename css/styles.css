@@ -1184,21 +1184,18 @@ ul {
   display: block;
 }
 
-.folio-row--weddings .folio-row__small {
+.folio-row--weddings .folio-row__small,
+.folio-row--elopements .folio-row__small,
+.folio-row--portraits .folio-row__small {
   max-width: 300px;
 }
 
-.folio-row--weddings .folio-row__small img {
-  aspect-ratio: 683 / 1024;
-  object-position: center center;
-}
-
-.folio-row--elopements .folio-row__small img {
-  object-position: center 40%;
-}
-
+.folio-row--weddings .folio-row__small img,
+.folio-row--elopements .folio-row__small img,
 .folio-row--portraits .folio-row__small img {
-  object-position: center 42%;
+  aspect-ratio: 683 / 1024;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .folio-row__meta {
