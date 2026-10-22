@@ -1012,6 +1012,99 @@ ul {
   opacity: 0.55;
 }
 
+/* —— Footer Dropdown Menus —— */
+.footer-drop {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-drop__trigger {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.25s, color 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.footer-drop:hover .footer-drop__trigger,
+.footer-drop.is-open .footer-drop__trigger {
+  color: #82817e !important;
+  opacity: 1;
+}
+
+.footer-drop__menu {
+  position: absolute;
+  bottom: calc(100% + 0.6rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  min-width: 9.5rem;
+  max-width: calc(100vw - 2rem);
+  padding: 1.25rem 1.75rem;
+  background: #eeebe5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.95rem;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 120;
+  white-space: nowrap;
+}
+
+/* Open on hover, focus, or click (.is-open) */
+.footer-drop:hover .footer-drop__menu,
+.footer-drop:focus-within .footer-drop__menu,
+.footer-drop.is-open .footer-drop__menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.footer-drop__menu li {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-drop__menu a {
+  display: block;
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.015em;
+  text-transform: none;
+  font-weight: 400;
+  color: #1a1a1a !important;
+  text-align: center;
+  text-shadow: none !important;
+  padding: 0.15rem 0;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-drop__menu a:hover {
+  opacity: 0.55;
+}
+
 .footer-bar {
   display: flex;
   align-items: center;

@@ -55,10 +55,10 @@
     });
   });
 
-  // Desktop header nav dropdowns (click to toggle)
-  const navDrops = document.querySelectorAll(".nav-drop");
+  // Desktop header & footer nav dropdowns (click to toggle + hover supported in CSS)
+  const navDrops = document.querySelectorAll(".nav-drop, .footer-drop");
   navDrops.forEach((drop) => {
-    const trigger = drop.querySelector(".nav-drop__trigger");
+    const trigger = drop.querySelector(".nav-drop__trigger, .footer-drop__trigger");
     if (!trigger) return;
 
     trigger.addEventListener("click", (e) => {
@@ -70,7 +70,7 @@
       navDrops.forEach((other) => {
         if (other !== drop) {
           other.classList.remove("is-open");
-          other.querySelector(".nav-drop__trigger")?.setAttribute("aria-expanded", "false");
+          other.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
         }
       });
 
@@ -82,10 +82,10 @@
 
   // Close dropdowns on outside click
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".nav-drop")) {
+    if (!e.target.closest(".nav-drop, .footer-drop")) {
       navDrops.forEach((drop) => {
         drop.classList.remove("is-open");
-        drop.querySelector(".nav-drop__trigger")?.setAttribute("aria-expanded", "false");
+        drop.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
       });
     }
   });
@@ -95,7 +95,7 @@
     if (e.key === "Escape") {
       navDrops.forEach((drop) => {
         drop.classList.remove("is-open");
-        drop.querySelector(".nav-drop__trigger")?.setAttribute("aria-expanded", "false");
+        drop.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
       });
     }
   });
