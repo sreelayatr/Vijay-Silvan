@@ -40,8 +40,13 @@
     if (e.key === "Escape" && nav?.classList.contains("is-open")) setMenu(false);
   });
 
+  // When a nav overlay link is clicked, navigate immediately without waiting for close animation
   nav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setMenu(false));
+    link.addEventListener("click", (e) => {
+      // Don't interfere — let the browser navigate immediately
+      // Just reset body overflow so there's no scroll-lock flash on next page
+      document.body.style.overflow = "";
+    });
   });
 
   nav?.querySelectorAll("[data-nav-accordion]").forEach((btn) => {
