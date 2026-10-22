@@ -2634,57 +2634,87 @@ ul {
 }
 
 .tst-close {
-  padding: 4rem 1.35rem 4.5rem;
-  text-align: center;
-  max-width: 36rem;
+  padding: 5rem clamp(1.25rem, 4vw, 3rem) 6rem;
+  max-width: 1220px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
 }
 
-.tst-close h2 {
+.tst-close__col {
+  flex: 0 1 235px;
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid var(--ink);
+  overflow: hidden;
+  background: var(--cream-deep);
+  margin: 0;
+}
+
+.tst-close__col img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 575 / 840;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tst-close__center {
+  flex: 1 1 440px;
+  max-width: 490px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tst-close__quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  font-size: clamp(1.25rem, 2.1vw, 1.55rem);
   font-weight: 400;
   font-style: italic;
   color: var(--ink);
-  line-height: 1.4;
-  max-width: 22rem;
-  margin: 0 auto 1.75rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  margin: 0 0 2rem;
+  max-width: 26rem;
 }
 
-.tst-close .btn {
-  margin-bottom: 3rem;
-}
-
-.tst-close__portrait,
-.tst-close__wide {
+.tst-close__center-photo {
+  width: 100%;
+  max-width: 440px;
   border: 1px solid var(--ink);
   overflow: hidden;
-  margin: 0 auto 1.75rem;
   background: var(--cream-deep);
+  margin: 0 0 2rem;
 }
 
-.tst-close__portrait {
-  max-width: 18rem;
-}
-
-.tst-close__portrait img {
+.tst-close__center-photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 16 / 11;
   object-fit: cover;
   object-position: center;
 }
 
-.tst-close__wide {
-  max-width: 100%;
+.tst-close__btn {
+  margin: 0;
 }
 
-.tst-close__wide img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1024 / 683;
-  object-fit: cover;
-  object-position: center;
+@media (max-width: 860px) {
+  .tst-close {
+    flex-direction: column;
+    align-items: center;
+    padding: 3.5rem 1.5rem 4.5rem;
+    gap: 2.5rem;
+  }
+
+  .tst-close__col {
+    max-width: 320px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -2722,15 +2752,6 @@ ul {
   .tst-slider__nav {
     left: 4rem;
     bottom: 2.5rem;
-  }
-
-  .tst-close {
-    padding: 5rem 2.5rem 5.5rem;
-    max-width: 42rem;
-  }
-
-  .tst-close h2 {
-    max-width: 28rem;
   }
 }
 
