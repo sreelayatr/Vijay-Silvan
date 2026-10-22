@@ -205,13 +205,6 @@ ul {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-/* Info trigger — not a link, no pointer */
-.nav-drop__trigger--nolink {
-  cursor: default;
-  text-decoration: none;
-  pointer-events: auto;
-}
-
 .nav-drop__trigger span {
   font-size: 0.88em;
   font-weight: 400;
@@ -224,9 +217,25 @@ ul {
   text-shadow: none !important;
 }
 
+/* Info (no-link) trigger: keep original nav colour, not clickable */
+.nav-drop__trigger--nolink {
+  pointer-events: none;
+}
+
+.nav-drop.is-open .nav-drop__trigger--nolink,
+.nav-drop:hover .nav-drop__trigger--nolink {
+  color: inherit !important;
+  text-shadow: inherit !important;
+}
+
 .nav-drop.is-open .nav-drop__trigger span,
 .nav-drop:hover .nav-drop__trigger span {
   color: #82817e !important;
+}
+
+.nav-drop.is-open .nav-drop__trigger--nolink span,
+.nav-drop:hover .nav-drop__trigger--nolink span {
+  color: inherit !important;
 }
 
 .nav-drop__menu {
