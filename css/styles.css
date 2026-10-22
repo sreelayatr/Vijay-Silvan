@@ -21,6 +21,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+a,
+button,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 html {
@@ -517,6 +524,30 @@ ul {
 .nav-list > li > a:hover,
 .nav-parent:hover {
   opacity: 0.55;
+}
+
+.nav-parent,
+.nav-parent-wrap,
+.nav-parent__btn,
+.nav-parent__link,
+.nav-parent__icon,
+.nav-sub,
+.nav-sub a,
+.nav-drop,
+.nav-drop__trigger,
+.nav-drop__trigger span,
+.nav-drop__menu,
+.nav-drop__menu a,
+.footer-drop,
+.footer-drop__trigger,
+.footer-drop__trigger span,
+.footer-drop__menu,
+.footer-drop__menu a,
+.footer-nav a {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
 }
 
 .nav-parent-wrap {
