@@ -1737,6 +1737,56 @@ ul {
   color: var(--ink-muted);
 }
 
+/* —— Contact Info Block —— */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #1c1b19;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s ease;
+}
+
+.contact-info__item--highlight,
+.contact-info__item--highlight .contact-info__text {
+  color: #d25c3f;
+}
+
+.contact-info__item:hover {
+  opacity: 0.7;
+}
+
+.contact-info__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  color: #1c1b19;
+}
+
+.contact-info__item--highlight .contact-info__icon {
+  color: #d25c3f;
+}
+
+.contact-info__icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .contact-page {
     grid-template-columns: 1fr;
