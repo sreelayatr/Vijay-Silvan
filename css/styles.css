@@ -238,6 +238,13 @@ ul {
   font-size: 0.88em;
   font-weight: 400;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0.85rem;
+  padding: 0 0.15rem;
+  cursor: pointer;
+  line-height: 1;
 }
 
 .nav-drop.is-open .nav-drop__trigger,
@@ -347,6 +354,25 @@ ul {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+/* Portfolio dropdown: click '+' only to toggle, never open on hover */
+.drop--click-only:not(.is-open) .nav-drop__menu,
+.drop--click-only:not(.is-open) .footer-drop__menu,
+.nav-drop:has(a[href*="portfolio"]):not(.is-open) .nav-drop__menu,
+.footer-drop:has(a[href*="portfolio"]):not(.is-open) .footer-drop__menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.drop--click-only.is-open .nav-drop__menu,
+.drop--click-only.is-open .footer-drop__menu,
+.nav-drop:has(a[href*="portfolio"]).is-open .nav-drop__menu,
+.footer-drop:has(a[href*="portfolio"]).is-open .footer-drop__menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 @media (min-width: 900px) {
@@ -1091,6 +1117,16 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
+}
+
+.footer-drop__trigger span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0.85rem;
+  padding: 0 0.15rem;
+  cursor: pointer;
+  line-height: 1;
 }
 
 .footer-drop__trigger--nolink {

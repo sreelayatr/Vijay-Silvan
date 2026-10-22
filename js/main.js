@@ -67,53 +67,79 @@
     });
   });
 
-  // Desktop header & footer nav dropdowns (click '+' to toggle dropdown on mobile/touch, click link navigates)
+  // Desktop header & footer nav dropdowns (click '+' to toggle dropdown, click link navigates)
   const navDrops = document.querySelectorAll(".nav-drop, .footer-drop");
   navDrops.forEach((drop) => {
+    // Dropdowns with a link (e.g. Portfolio) should only open via '+' click, not hover
+    if (drop.querySelector("a.nav-drop__trigger, a.footer-drop__trigger")) {
+      drop.classList.add("drop--click-only");
+    }
+
     const trigger = drop.querySelector(".nav-drop__trigger, .footer-drop__trigger");
     if (!trigger) return;
 
-    // If there is a plus indicator span, tapping the plus toggles dropdown on touch
+    // Plus indicator span
     const plusSpan = trigger.querySelector("span");
     if (plusSpan) {
       plusSpan.style.cursor = "pointer";
       plusSpan.addEventListener("click", (e) => {
-        // Only prevent navigation if clicked directly on the '+' symbol
+        // Prevent link navigation when clicking '+'
         e.preventDefault();
         e.stopPropagation();
         const isOpen = drop.classList.contains("is-open");
+        const willOpen = !isOpen;
 
+        // Close other dropdowns and reset their plus icon
         navDrops.forEach((other) => {
           if (other !== drop) {
             other.classList.remove("is-open");
             other.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
+            const otherSpan = other.querySelector(".nav-drop__trigger span, .footer-drop__trigger span");
+            if (otherSpan) otherSpan.textContent = "+";
           }
         });
 
-        drop.classList.toggle("is-open", !isOpen);
-        trigger.setAttribute("aria-expanded", !isOpen ? "true" : "false");
+        drop.classList.toggle("is-open", willOpen);
+        trigger.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        plusSpan.textContent = willOpen ? "-" : "+";
       });
     }
   });
 
-  // Close dropdowns on outside click
+  // Close dropdowns on outside click and reset '+' icon
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".nav-drop, .footer-drop")) {
       navDrops.forEach((drop) => {
         drop.classList.remove("is-open");
         drop.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
+        const span = drop.querySelector(".nav-drop__trigger span, .footer-drop__trigger span");
+        if (span) span.textContent = "+";
       });
     }
   });
 
-  // Close dropdowns on Escape key
+  // Close dropdowns on Escape key and reset '+' icon
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       navDrops.forEach((drop) => {
         drop.classList.remove("is-open");
         drop.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
+        const span = drop.querySelector(".nav-drop__trigger span, .footer-drop__trigger span");
+        if (span) span.textContent = "+";
       });
     }
+  });
+
+  // Close dropdown when a menu link is clicked
+  document.querySelectorAll(".nav-drop__menu a, .footer-drop__menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navDrops.forEach((drop) => {
+        drop.classList.remove("is-open");
+        drop.querySelector(".nav-drop__trigger, .footer-drop__trigger")?.setAttribute("aria-expanded", "false");
+        const span = drop.querySelector(".nav-drop__trigger span, .footer-drop__trigger span");
+        if (span) span.textContent = "+";
+      });
+    });
   });
 
   // Hero slider
