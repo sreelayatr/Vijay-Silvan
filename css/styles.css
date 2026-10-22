@@ -1326,6 +1326,10 @@ ul {
   aspect-ratio: 2 / 3;
 }
 
+.masonry__item--wide img {
+  aspect-ratio: 1024 / 682;
+}
+
 .masonry__item--tall {
   grid-row: span 2;
 }
