@@ -2476,8 +2476,14 @@ ul {
 .tst-featured {
   padding: 3.5rem 1.35rem 3rem;
   text-align: center;
+  max-width: 100%;
+  background: var(--cream-deep);
+}
+
+.tst-featured > * {
   max-width: 36rem;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tst-featured__label {
@@ -2642,6 +2648,11 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 3.5vw, 3.5rem);
+}
+
+.tst-close-wrapper {
+  background: var(--cream-deep);
+  width: 100%;
 }
 
 .tst-close__col {
