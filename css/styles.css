@@ -1193,7 +1193,7 @@ ul {
 .folio-row--weddings .folio-row__small img,
 .folio-row--elopements .folio-row__small img,
 .folio-row--portraits .folio-row__small img {
-  aspect-ratio: 683 / 1024;
+  aspect-ratio: 682 / 1024;
   object-fit: cover;
   object-position: center center;
 }
