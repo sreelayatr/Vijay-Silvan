@@ -1041,11 +1041,23 @@ ul {
   width: 1.15rem;
   height: 1.15rem;
   color: #1c1b19;
-  transition: opacity 0.25s, color 0.25s;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 .socials a:hover {
-  opacity: 0.55;
+  opacity: 1;
+}
+
+.socials a[aria-label="YouTube"]:hover,
+.socials a[href*="youtube.com"]:hover {
+  color: #ff0000 !important;
+  opacity: 1;
+}
+
+.socials a[aria-label="Instagram"]:hover,
+.socials a[href*="instagram.com"]:hover {
+  color: #833ab4 !important;
+  opacity: 1;
 }
 
 .socials svg {
