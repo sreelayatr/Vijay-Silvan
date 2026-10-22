@@ -205,6 +205,13 @@ ul {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
+/* Info trigger — not a link, no pointer */
+.nav-drop__trigger--nolink {
+  cursor: default;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
 .nav-drop__trigger span {
   font-size: 0.88em;
   font-weight: 400;
