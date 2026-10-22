@@ -1787,19 +1787,18 @@ ul {
   display: block;
 }
 
-/* —— Contact Map —— */
+/* —— Contact Map Section —— */
 .contact-map {
-  margin-top: 2rem;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  line-height: 0; /* removes gap below iframe */
 }
 
-.contact-map iframe {
-  display: block;
+.contact-map__iframe {
   width: 100%;
-  height: 320px;
-  border: none;
+  height: 460px;
+  border: 0;
+  display: block;
+  filter: grayscale(8%) contrast(1.02);
 }
 
 @media (max-width: 768px) {
