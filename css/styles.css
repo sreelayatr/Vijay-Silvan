@@ -247,68 +247,57 @@ ul {
   line-height: 1;
 }
 
-/* Info (no-link) trigger: keep original nav colour, not clickable */
+/* Info (no-link) trigger */
 .nav-drop__trigger--nolink {
-  pointer-events: none;
-  cursor: default;
+  cursor: pointer;
+  user-select: none;
 }
 
-.nav-drop.is-open .nav-drop__trigger--nolink,
-.nav-drop:hover .nav-drop__trigger--nolink {
-  color: inherit !important;
-  text-shadow: inherit !important;
-}
-
-.nav-drop.is-open .nav-drop__trigger--nolink span,
-.nav-drop:hover .nav-drop__trigger--nolink span {
-  color: inherit !important;
-}
-
-/* Portfolio trigger (has link): independent hover & active styling */
-/* 1. When hovering over or clicking 'Portfolio' text: only 'Portfolio' changes color, '+' remains untouched */
-.nav-drop__trigger:not(.nav-drop__trigger--nolink):not(:has(span:hover)):hover,
-.nav-drop__trigger:not(.nav-drop__trigger--nolink):not(:has(span:hover)):active {
+/* Dropdown triggers: independent hover & active styling (Portfolio & Info) */
+/* 1. When hovering over or clicking the text (not hovering the plus/minus span): only text changes color, '+' remains untouched */
+.nav-drop__trigger:not(:has(span:hover)):hover,
+.nav-drop__trigger:not(:has(span:hover)):active {
   color: #82817e !important;
   text-shadow: none !important;
 }
-.nav-drop__trigger:not(.nav-drop__trigger--nolink):not(:has(span:hover)):hover span,
-.nav-drop__trigger:not(.nav-drop__trigger--nolink):not(:has(span:hover)):active span {
+.nav-drop__trigger:not(:has(span:hover)):hover span,
+.nav-drop__trigger:not(:has(span:hover)):active span {
   color: var(--white) !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45) !important;
 }
-.site-header--solid .nav-drop__trigger:not(.nav-drop__trigger--nolink):not(:has(span:hover)):hover span,
-.site-header--solid .nav-drop__trigger:not(.nav-drop__trigger--nolink):not(:has(span:hover)):active span {
+.site-header--solid .nav-drop__trigger:not(:has(span:hover)):hover span,
+.site-header--solid .nav-drop__trigger:not(:has(span:hover)):active span {
   color: var(--ink) !important;
   text-shadow: none !important;
 }
 
-/* 2. When hovering over or clicking '+' span specifically: only '+' changes color, 'Portfolio' remains untouched */
-.nav-drop__trigger:not(.nav-drop__trigger--nolink):has(span:hover),
-.nav-drop__trigger:not(.nav-drop__trigger--nolink):has(span:active) {
+/* 2. When hovering over or clicking '+' span specifically: only '+' changes color, text remains untouched */
+.nav-drop__trigger:has(span:hover),
+.nav-drop__trigger:has(span:active) {
   color: var(--white) !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45) !important;
 }
-.site-header--solid .nav-drop__trigger:not(.nav-drop__trigger--nolink):has(span:hover),
-.site-header--solid .nav-drop__trigger:not(.nav-drop__trigger--nolink):has(span:active) {
+.site-header--solid .nav-drop__trigger:has(span:hover),
+.site-header--solid .nav-drop__trigger:has(span:active) {
   color: var(--ink) !important;
   text-shadow: none !important;
 }
-.nav-drop__trigger:not(.nav-drop__trigger--nolink) span:hover,
-.nav-drop__trigger:not(.nav-drop__trigger--nolink) span:active {
+.nav-drop__trigger span:hover,
+.nav-drop__trigger span:active {
   color: #82817e !important;
   text-shadow: none !important;
 }
 
-/* 3. When dropdown is open (via clicking '+'): '+' (now '-') stays active color, 'Portfolio' remains normal */
-.nav-drop.is-open .nav-drop__trigger:not(.nav-drop__trigger--nolink) {
+/* 3. When dropdown is open (via clicking '+'): '+' (now '-') stays active color, text remains normal */
+.nav-drop.is-open .nav-drop__trigger {
   color: var(--white);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
-.site-header--solid .nav-drop.is-open .nav-drop__trigger:not(.nav-drop__trigger--nolink) {
+.site-header--solid .nav-drop.is-open .nav-drop__trigger {
   color: var(--ink);
   text-shadow: none;
 }
-.nav-drop.is-open .nav-drop__trigger:not(.nav-drop__trigger--nolink) span {
+.nav-drop.is-open .nav-drop__trigger span {
   color: #82817e !important;
   text-shadow: none !important;
 }
@@ -387,28 +376,16 @@ ul {
   opacity: 0.55;
 }
 
-.nav-drop:hover .nav-drop__menu,
-.nav-drop:focus-within .nav-drop__menu,
-.nav-drop.is-open .nav-drop__menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Portfolio dropdown: click '+' only to toggle, never open on hover */
-.drop--click-only:not(.is-open) .nav-drop__menu,
-.drop--click-only:not(.is-open) .footer-drop__menu,
-.nav-drop:has(a[href*="portfolio"]):not(.is-open) .nav-drop__menu,
-.footer-drop:has(a[href*="portfolio"]):not(.is-open) .footer-drop__menu {
+/* Dropdowns only open when .is-open is active (via clicking '+' or toggle) */
+.nav-drop:not(.is-open) .nav-drop__menu,
+.footer-drop:not(.is-open) .footer-drop__menu {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
 }
 
-.drop--click-only.is-open .nav-drop__menu,
-.drop--click-only.is-open .footer-drop__menu,
-.nav-drop:has(a[href*="portfolio"]).is-open .nav-drop__menu,
-.footer-drop:has(a[href*="portfolio"]).is-open .footer-drop__menu {
+.nav-drop.is-open .nav-drop__menu,
+.footer-drop.is-open .footer-drop__menu {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
@@ -1215,46 +1192,36 @@ ul {
 }
 
 .footer-drop__trigger--nolink {
-  pointer-events: none;
-  cursor: default;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* Footer Info (no-link) */
-.footer-drop.is-open .footer-drop__trigger--nolink,
-.footer-drop:hover .footer-drop__trigger--nolink {
-  color: inherit !important;
-}
-.footer-drop.is-open .footer-drop__trigger--nolink span,
-.footer-drop:hover .footer-drop__trigger--nolink span {
-  color: inherit !important;
-}
-
-/* Footer Portfolio trigger (has link): independent hover & active styling */
-/* 1. When hovering over or clicking 'Portfolio' text: only 'Portfolio' changes color, '+' remains untouched */
-.footer-drop__trigger:not(.footer-drop__trigger--nolink):not(:has(span:hover)):hover,
-.footer-drop__trigger:not(.footer-drop__trigger--nolink):not(:has(span:hover)):active {
+/* Footer Trigger (Portfolio & Info): independent hover & active styling */
+/* 1. When hovering over or clicking text: only text changes color, '+' remains untouched */
+.footer-drop__trigger:not(:has(span:hover)):hover,
+.footer-drop__trigger:not(:has(span:hover)):active {
   color: #82817e !important;
 }
-.footer-drop__trigger:not(.footer-drop__trigger--nolink):not(:has(span:hover)):hover span,
-.footer-drop__trigger:not(.footer-drop__trigger--nolink):not(:has(span:hover)):active span {
+.footer-drop__trigger:not(:has(span:hover)):hover span,
+.footer-drop__trigger:not(:has(span:hover)):active span {
   color: var(--ink) !important;
 }
 
-/* 2. When hovering over or clicking '+' span specifically: only '+' changes color, 'Portfolio' remains untouched */
-.footer-drop__trigger:not(.footer-drop__trigger--nolink):has(span:hover),
-.footer-drop__trigger:not(.footer-drop__trigger--nolink):has(span:active) {
+/* 2. When hovering over or clicking '+' span specifically: only '+' changes color, text remains untouched */
+.footer-drop__trigger:has(span:hover),
+.footer-drop__trigger:has(span:active) {
   color: var(--ink) !important;
 }
-.footer-drop__trigger:not(.footer-drop__trigger--nolink) span:hover,
-.footer-drop__trigger:not(.footer-drop__trigger--nolink) span:active {
+.footer-drop__trigger span:hover,
+.footer-drop__trigger span:active {
   color: #82817e !important;
 }
 
-/* 3. When dropdown is open (via clicking '+'): '+' (now '-') stays active color, 'Portfolio' remains normal */
-.footer-drop.is-open .footer-drop__trigger:not(.footer-drop__trigger--nolink) {
+/* 3. When dropdown is open (via clicking '+'): '+' (now '-') stays active color, text remains normal */
+.footer-drop.is-open .footer-drop__trigger {
   color: var(--ink);
 }
-.footer-drop.is-open .footer-drop__trigger:not(.footer-drop__trigger--nolink) span {
+.footer-drop.is-open .footer-drop__trigger span {
   color: #82817e !important;
 }
 
@@ -1286,9 +1253,7 @@ ul {
   white-space: nowrap;
 }
 
-/* Open on hover, focus, or click (.is-open) */
-.footer-drop:hover .footer-drop__menu,
-.footer-drop:focus-within .footer-drop__menu,
+/* Open only on click (.is-open) */
 .footer-drop.is-open .footer-drop__menu {
   opacity: 1;
   visibility: visible;

@@ -66,10 +66,12 @@
         </li>
         <li><a href="blog.html">Blog</a></li>
         <li class="nav-item has-sub">
-          <button type="button" class="nav-parent" data-nav-accordion aria-expanded="false">
-            <span>Info</span>
-            <span class="nav-parent__icon" aria-hidden="true">+</span>
-          </button>
+          <div class="nav-parent-wrap">
+            <span class="nav-parent__link nav-parent__link--nolink" data-nav-accordion>Info</span>
+            <button type="button" class="nav-parent__btn" data-nav-accordion aria-expanded="false" aria-label="Toggle Info sub-menu">
+              <span class="nav-parent__icon" aria-hidden="true">+</span>
+            </button>
+          </div>
           <ul class="nav-sub">
             <li><a href="services.html">Services</a></li>
             <li><a href="experience.html">Experience</a></li>
