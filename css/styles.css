@@ -1190,8 +1190,18 @@ ul {
   max-width: 300px;
 }
 
-.folio-row--weddings .folio-row__small img,
-.folio-row--elopements .folio-row__small img,
+.folio-row--weddings .folio-row__small img {
+  aspect-ratio: 683 / 1024;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.folio-row--elopements .folio-row__small img {
+  aspect-ratio: 748 / 1024;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .folio-row--portraits .folio-row__small img {
   aspect-ratio: 682 / 1024;
   object-fit: cover;
@@ -2170,7 +2180,7 @@ ul {
 .tst-featured__photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 682 / 1024;
+  aspect-ratio: 748 / 1024;
   object-fit: cover;
   object-position: center;
 }
