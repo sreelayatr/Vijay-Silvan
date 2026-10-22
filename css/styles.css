@@ -159,12 +159,30 @@ ul {
   transition: opacity 0.25s;
 }
 
+/* Match Info+ span colour to other nav links */
+.header-nav .nav-drop__trigger--nolink {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  transition: opacity 0.25s;
+}
+
 .header-nav a:hover,
 .header-nav a[aria-current="page"] {
   opacity: 0.65;
 }
 
 .site-header--solid .header-nav a {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+/* Info+ on solid-background pages */
+.site-header--solid .header-nav .nav-drop__trigger--nolink {
   color: var(--ink);
   text-shadow: none;
 }
