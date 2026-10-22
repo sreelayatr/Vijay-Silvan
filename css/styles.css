@@ -2489,9 +2489,14 @@ ul {
   margin-bottom: 2rem;
   background-color: #ede9e2;
   padding: 1.5rem 2rem;
-  margin-left: -1.35rem;
-  margin-right: -1.35rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   margin-top: -3.5rem;
+  box-sizing: border-box;
 }
 
 .tst-featured__photo {
