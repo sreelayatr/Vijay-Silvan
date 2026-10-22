@@ -1,6 +1,7 @@
 (() => {
   const nav = document.getElementById("nav");
-  const openBtns = document.querySelectorAll("[data-menu-open]");
+  const header = document.querySelector(".site-header");
+  const menuToggles = document.querySelectorAll(".menu-toggle, [data-menu-open]");
   const closeBtns = document.querySelectorAll("[data-menu-close]");
 
   const setMenu = (open) => {
@@ -8,9 +9,14 @@
     nav.classList.toggle("is-open", open);
     nav.setAttribute("aria-hidden", open ? "false" : "true");
     document.body.style.overflow = open ? "hidden" : "";
-    openBtns.forEach((btn) => {
+
+    header?.classList.toggle("is-menu-open", open);
+    menuToggles.forEach((btn) => {
+      btn.classList.toggle("is-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
+
     if (!open) {
       nav.querySelectorAll(".nav-item.has-sub.is-expanded").forEach((item) => {
         item.classList.remove("is-expanded");
@@ -21,7 +27,13 @@
     }
   };
 
-  openBtns.forEach((btn) => btn.addEventListener("click", () => setMenu(true)));
+  menuToggles.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = nav?.classList.contains("is-open");
+      setMenu(!isOpen);
+    });
+  });
   closeBtns.forEach((btn) => btn.addEventListener("click", () => setMenu(false)));
 
   document.addEventListener("keydown", (e) => {
