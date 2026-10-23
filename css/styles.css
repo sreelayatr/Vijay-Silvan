@@ -3740,6 +3740,19 @@ ul {
   }
 }
 
+@media (max-width: 768px) {
+  .svc-quote {
+    aspect-ratio: unset;
+    min-height: 420px;
+    padding: 3rem 1.5rem;
+  }
+
+  .svc-quote__text {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
 
 /* —— Story Detail Pages & Blog Links —— */
 a.blog-card__link {
